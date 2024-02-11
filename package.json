@@ -1,0 +1,18 @@
+{
+  "name": "dexscreenerjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christopher Konopka",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "cfonts": "^3.2.0",
+    "express": "^4.18.2",
+    "ohta": "0.0.6",
+    "winston": "^3.11.0"
+  }
+}
