@@ -13,6 +13,7 @@ const fs = require("fs");
 var express = require('express')
 const cfonts = require('cfonts');
 const dexscreener = require("./lib/dexscreener");
+const ohta = require('ohta');
  
 /**
  **************************
@@ -28,7 +29,7 @@ const dexscreener = require("./lib/dexscreener");
 * DYNAMIC ****************
 ************************** 
 */
- 
+
 /**
  * /dexscreenerjs
  * @param chainId - Coinglass API key
@@ -37,8 +38,8 @@ const dexscreener = require("./lib/dexscreener");
  * 
 */
 
-app.get('/dexscreenerjs', function(req, res) {
-    console.log("REQUEST - /dexscreenerjs");
+app.get('/dexscreenerjs', function(req, res) {  
+    ohta.askOhtaAbout('info', 'dexscreenerJS', 'app.js - /dexscreenerjs', "REQUEST");   
     var chainId = req.query.chainId;
     var pairAddresses = req.query.pairAddresses;
 
@@ -46,12 +47,16 @@ app.get('/dexscreenerjs', function(req, res) {
         chainId: chainId,
         pairAddresses: pairAddresses
     }
+    
+    ohta.askOhtaAbout('info', 'dexscreenerJS', 'app.js - /dexscreenerjs', obj);   
 
     var gg = dexscreener.getDexScreenerData(obj);
+    ohta.askOhtaAbout('info', 'dexscreenerJS', 'app.js - /dexscreenerjs', "FUNCTION - getDexScreenerData");
     gg.then(function(data) {
+        ohta.askOhtaAbout('info', 'dexscreenerJS', 'app.js - /dexscreenerjs', data);
         res.send(data);
     }).catch(err => {
-        console.log(err);
+        ohta.askOhtaAbout('error', 'dexscreenerJS', 'app.js - /dexscreenerjs', err);
     });
 })
  
@@ -81,5 +86,5 @@ cfonts.say('dexscreenerJS', {
 ************************** 
 */
 app.listen(port, HOST, function() {
-console.log("PORT: " + port);
+    ohta.askOhtaAbout('info', 'dexscreenerJS', 'app.js - init', "PORT - " + port);
 })
