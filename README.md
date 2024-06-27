@@ -1,9 +1,8 @@
-# dexscreenerJS
+<h3 align="center">
+  <img height="40%" width="40%" src="https://github.com/vondas-network/dexscreenerJS/blob/main/img/dexscreenerjs-logo.png?raw=true"/>
+</h3>
 
-An API for dexscreener.com pair data 
-
-
-*"DEX Screener is a powerful and easy-to-use platform that allows traders and investors to track and analyze real-time data from multiple decentralized exchanges and chains."*
+<p align="center"><em>An API for dexscreener.com pair data</em></p> 
 
 # Installation
 ```bash
